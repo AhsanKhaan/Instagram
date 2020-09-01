@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use \App\User;
 class ProfilesController extends Controller
 {
       /**
@@ -11,8 +11,9 @@ class ProfilesController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
+    public function index($user)
+    {   //dd($user);
+        dd(User::find($user));
         return view('home');
     }
 }
